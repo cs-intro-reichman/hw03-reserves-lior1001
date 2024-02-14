@@ -41,7 +41,7 @@ public class LoanCalc {
     public static double bruteForceSolver(double loan, double rate, int n, double epsilon) { 
 		iterationCounter = 0; 
 		double periPay = (loan/n);			//initial guess for the periodical payment
-		while((Math.abs(endBalance(loan, rate, n, periPay)) >= epsilon) && (periPay <= loan)) {
+		while((endBalance(loan, rate, n, periPay) >= 0)) {
 			periPay += epsilon;
 			iterationCounter++;
 		}
